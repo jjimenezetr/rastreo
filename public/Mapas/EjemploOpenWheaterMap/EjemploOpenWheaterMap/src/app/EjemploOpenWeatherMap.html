@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Ejemplo de OpenWeatherMap con OSM</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="../libs/OpenLayers-2.12/theme/default/style.css" type="text/css">
+	<script src="../libs/OpenLayers-2.12/OpenLayers.js"></script>
+	<script src="http://openweathermap.org/js/OWM.OpenLayers.1.3.5.js" ></script>
+    <style>
+        .olControlAttribution {
+            bottom: 5px;
+            font-size: 9px;
+        }
+        #customZoom {
+            z-index: 1001;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+        #customZoom a {
+            text-decoration: none;
+            position: absolute;
+            display: block;
+            width: 50px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff;
+            background: #369;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        #customZoom a:hover {
+            background: #036;
+        }
+        #customZoomOut {
+            top: 25px;
+        }    
+    </style>    
+	<script type="text/javascript">
+		// Variables.
+		var v_mapa;
+		var v_latitud;											    			// Latitud.
+		var v_longitud;															// Longitud.
+		var v_layer_mapnik;														// Layer Mapnik.
+		var v_layer_ciudad;														// Layer Ciudad.
+		
+		function inicializar() {
+			v_latitud = -25.31941;											
+    		v_longitud = -57.58146;												
+		
+			// Proyecciones
+    		var fromProjection = new OpenLayers.Projection("EPSG:4326"); 		// Transformar from WGS 1984
+    		var toProjection = new OpenLayers.Projection("EPSG:900913");		// a Spherical Mercator Projection.
+    		
+    		// Dimensiones del mapa. 
+      		var extension = new OpenLayers.Bounds(-57.5936300, -25.3309900, -57.5692900, -25.3078300).transform(fromProjection,toProjection);
+    		
+    		// El objeto mapa.
+        	v_mapa = new OpenLayers.Map('mapa', {
+        		maxExtent : extension,
+        		units: 'm',
+        		projection: toProjection,
+    			displayProjection: fromProjection,
+            	controls: [
+					new OpenLayers.Control.Attribution(),
+	            	new OpenLayers.Control.Zoom(),
+                	new OpenLayers.Control.Navigation(),							// Navegar por el mapa.
+                    new OpenLayers.Control.ScaleLine(),								// La escala utilizada en el mapa.
+                    new OpenLayers.Control.KeyboardDefaults()						// Mover el mapa con el teclado.
+                ]
+            });
+			// Crear el Layer OSM.
+		    v_layer_mapnik = new OpenLayers.Layer.OSM();
+			
+			// Crear el Layer Weather.
+			v_layer_ciudad = new OpenLayers.Layer.Vector.OWMWeather("Weather");
+		
+			// Agregar al mapa los Layers.
+			v_mapa.addLayers([v_layer_mapnik, v_layer_ciudad]); 
+			
+			// Agregar pop-up window cuando se hace click en el icono.
+			selectControl = new OpenLayers.Control.SelectFeature(v_layer_ciudad);
+			v_mapa.addControl(selectControl);
+			selectControl.activate(); 
+			
+			// Posicionar para la primera visualizacion el mapa en una latitud y longitud elegida.
+        	v_mapa.setCenter(new OpenLayers.LonLat(v_longitud, v_latitud).transform(
+                    fromProjection, 					// Transformar from WGS 1984.
+            		toProjection 						// a Spherical Mercator Projection.
+            	), 10									// Nivel de zoom.
+          	);
+		}
+	</script>
+</head>
+<body  onload="inicializar()">
+	<h1><center>Ejemplo de OpenWeatherMap con OSM</center></h1>
+	<center>
+		<div id="mapa" style="width:800px;height:450px"></div>
+	</center>
+</body>
+</html>
