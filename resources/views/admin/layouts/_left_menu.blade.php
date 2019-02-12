@@ -1,17 +1,17 @@
 <ul id="menu" class="page-sidebar-menu">
 
-    <li {!! (Request::is('admin') ? 'class="active"' : '') !!}>
+    <!-- <li {!! (Request::is('admin') ? 'class="active"' : '') !!}>
         <a href="{{ route('admin.dashboard') }}">
             <i class="livicon" data-name="dashboard" data-size="18" data-c="#418BCA" data-hc="#418BCA"
                data-loop="true"></i>
             <span class="title">Dashboard 1</span>
         </a>
-    </li>
+    </li> -->
     <li {!! (Request::is('admin/index1') ? 'class="active"' : '') !!}>
         <a href="{{  URL::to('admin/index1') }}">
             <i class="livicon" data-name="dashboard" data-size="18" data-c="#EF6F6C" data-hc="#EF6F6C"
                data-loop="true"></i>
-            Dashboard 2
+            Panel
         </a>
     </li>
 
@@ -19,17 +19,17 @@
         <a href="{{ URL('admin/generator_builder') }}">
             <i class="livicon" data-name="shield" data-size="18" data-c="#F89A14" data-hc="#F89A14"
                data-loop="true"></i>
-            Generator Builder
+            Creador de CRUDS Modelos
         </a>
     </li>
-    <li {!! (Request::is('admin/log_viewers') || Request::is('admin/log_viewers/logs')  ? 'class="active"' : '') !!}>
+    <!-- <li {!! (Request::is('admin/log_viewers') || Request::is('admin/log_viewers/logs')  ? 'class="active"' : '') !!}>
 
         <a href="{{  URL::to('admin/log_viewers') }}">
             <i class="livicon" data-name="help" data-size="18" data-c="#1DA1F2" data-hc="#1DA1F2"
                data-loop="true"></i>
             Log Viewer
         </a>
-    </li>
+    </li> -->
     <li {!! (Request::is('admin/activity_log') ? 'class="active"' : '') !!}>
         <a href="{{  URL::to('admin/activity_log') }}">
             <i class="livicon" data-name="eye-open" data-size="18" data-c="#F89A14" data-hc="#F89A14"
@@ -41,7 +41,7 @@
         <a href="#">
             <i class="livicon" data-name="medal" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
                data-loop="true"></i>
-            <span class="title">Laravel Examples</span>
+            <span class="title">Ejemplos tablas</span>
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
@@ -83,7 +83,7 @@
             </li>
         </ul>
     </li>
-    <li {!! ( Request::is('admin/laravel_chart') || Request::is('admin/database_chart') ? 'class="active"' : '') !!}>
+    <!-- <li {!! ( Request::is('admin/laravel_chart') || Request::is('admin/database_chart') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="barchart" data-size="18" data-c="#418BCA" data-hc="#418BCA"
                data-loop="true"></i>
@@ -104,9 +104,9 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> -->
 
-    <li {!! (Request::is('admin/form_builder') || Request::is('admin/form_builder2') || Request::is('admin/buttonbuilder') || Request::is('admin/gridmanager') ? 'class="active"' : '') !!}>
+    <!-- <li {!! (Request::is('admin/form_builder') || Request::is('admin/form_builder2') || Request::is('admin/buttonbuilder') || Request::is('admin/gridmanager') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon"  data-name="wrench" data-size="18" data-c="#6CC66C" data-hc="#6CC66C" data-loop="true"></i>
             <span class="title">Builders</span>
@@ -132,7 +132,7 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> -->
 
     <li {!! (Request::is('admin/form_examples') || Request::is('admin/editor') || Request::is('admin/editor2')
     || Request::is('admin/form_layout') || Request::is('admin/validation') || Request::is('admin/formelements') || Request::is('admin/dropdowns')
@@ -141,7 +141,7 @@
         <a href="#">
             <i class="livicon" data-name="doc-portrait" data-c="#67C5DF" data-hc="#67C5DF"
                data-size="18" data-loop="true"></i>
-            <span class="title">Forms</span>
+            <span class="title">Ejemplos formularios</span>
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
@@ -226,7 +226,7 @@
             </li>
         </ul>
     </li>
-    <li {!! (Request::is('admin/animatedicons') || Request::is('admin/buttons') || Request::is('admin/advanced_buttons') || Request::is('admin/tabs_accordions') || Request::is('admin/panels') || Request::is('admin/icon') || Request::is('admin/color') || Request::is('admin/grid') || Request::is('admin/carousel') || Request::is('admin/advanced_modals') || Request::is('admin/tagsinput') || Request::is('admin/nestable_list') || Request::is('admin/sortable_list') || Request::is('admin/toastr') || Request::is('admin/notifications')|| Request::is('admin/treeview_jstree')|| Request::is('admin/sweetalert') || Request::is('admin/session_timeout') || Request::is('admin/portlet_draggable') ? 'class="active"' : '') !!}>
+    <!-- <li {!! (Request::is('admin/animatedicons') || Request::is('admin/buttons') || Request::is('admin/advanced_buttons') || Request::is('admin/tabs_accordions') || Request::is('admin/panels') || Request::is('admin/icon') || Request::is('admin/color') || Request::is('admin/grid') || Request::is('admin/carousel') || Request::is('admin/advanced_modals') || Request::is('admin/tagsinput') || Request::is('admin/nestable_list') || Request::is('admin/sortable_list') || Request::is('admin/toastr') || Request::is('admin/notifications')|| Request::is('admin/treeview_jstree')|| Request::is('admin/sweetalert') || Request::is('admin/session_timeout') || Request::is('admin/portlet_draggable') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="brush" data-c="#F89A14" data-hc="#F89A14" data-size="18"
                data-loop="true"></i>
@@ -355,8 +355,8 @@
                 </a>
             </li>
         </ul>
-    </li>
-    <li {!! (Request::is('admin/general') || Request::is('admin/pickers') || Request::is('admin/x-editable') || Request::is('admin/timeline') || Request::is('admin/transitions') || Request::is('admin/sliders') || Request::is('admin/knob') ? 'class="active"' : '') !!}>
+    </li> -->
+    <!-- <li {!! (Request::is('admin/general') || Request::is('admin/pickers') || Request::is('admin/x-editable') || Request::is('admin/timeline') || Request::is('admin/transitions') || Request::is('admin/sliders') || Request::is('admin/knob') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="lab" data-c="#EF6F6C" data-hc="#EF6F6C" data-size="18"
                data-loop="true"></i>
@@ -376,12 +376,6 @@
                     Pickers
                 </a>
             </li>
-            <!--<li {!! (Request::is('admin/x-editable') ? 'class="active"' : '') !!}>-->
-                <!--<a href="{{ URL::to('admin/x-editable') }}">-->
-                    <!--<i class="fa fa-angle-double-right"></i>-->
-                    <!--X-editable-->
-                <!--</a>-->
-            <!--</li>-->
             <li {!! (Request::is('admin/timeline') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/timeline') }}">
                     <i class="fa fa-angle-double-right"></i>
@@ -407,7 +401,7 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> -->
     <li {!! (Request::is('admin/simple_table') || Request::is('admin/responsive_tables') || Request::is('admin/advanced_tables') || Request::is('admin/advanced_tables2') || Request::is('admin/jtable') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="table" data-c="#418BCA" data-hc="#418BCA" data-size="18"
@@ -449,7 +443,7 @@
             {{--</li>--}}
         </ul>
     </li>
-    <li {!! (Request::is('admin/charts') || Request::is('admin/piecharts') || Request::is('admin/charts_animation') || Request::is('admin/jscharts') || Request::is('admin/sparklinecharts') ? 'class="active"' : '') !!}>
+    <!-- <li {!! (Request::is('admin/charts') || Request::is('admin/piecharts') || Request::is('admin/charts_animation') || Request::is('admin/jscharts') || Request::is('admin/sparklinecharts') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="barchart" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
                data-loop="true"></i>
@@ -488,8 +482,8 @@
                 </a>
             </li>
         </ul>
-    </li>
-    <li {!! (Request::is('admin/calendar') ? 'class="active"' : '') !!}>
+    </li> -->
+    <!-- <li {!! (Request::is('admin/calendar') ? 'class="active"' : '') !!}>
         <a href="{{ URL::to('admin/calendar') }}">
             <i class="livicon" data-c="#F89A14" data-hc="#F89A14" data-name="calendar" data-size="18"
                data-loop="true"></i>
@@ -529,12 +523,12 @@
             Tasks
             <span class="badge badge-danger" id="taskcount">{{ Request::get('tasks_count') }}</span>
         </a>
-    </li>
+    </li> -->
     <li {!! (Request::is('admin/gallery') || Request::is('admin/masonry_gallery') || Request::is('admin/imagecropping') || Request::is('admin/imgmagnifier') ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="image" data-c="#418BCA" data-hc="#418BCA" data-size="18"
                data-loop="true"></i>
-            <span class="title">Gallery</span>
+            <span class="title">Galeria</span>
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
@@ -568,32 +562,32 @@
         <a href="#">
             <i class="livicon" data-name="user" data-size="18" data-c="#6CC66C" data-hc="#6CC66C"
                data-loop="true"></i>
-            <span class="title">Users</span>
+            <span class="title">Usuario</span>
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
             <li {!! (Request::is('admin/users') ? 'class="active" id="active"' : '') !!}>
                 <a href="{{ URL::to('admin/users') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Users
+                    Usuarios
                 </a>
             </li>
             <li {!! (Request::is('admin/users/create') ? 'class="active" id="active"' : '') !!}>
                 <a href="{{ URL::to('admin/users/create') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Add New User
+                    Agregar Usuario
                 </a>
             </li>
             <li {!! ((Request::is('admin/users/*')) && !(Request::is('admin/users/create')) || Request::is('admin/user_profile') ? 'class="active" id="active"' : '') !!}>
                 <a href="{{ URL::route('admin.users.show',Sentinel::getUser()->id) }}">
                     <i class="fa fa-angle-double-right"></i>
-                    View Profile
+                    Ver perfil
                 </a>
             </li>
             <li {!! (Request::is('admin/deleted_users') ? 'class="active" id="active"' : '') !!}>
                 <a href="{{ URL::to('admin/deleted_users') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Deleted Users
+                    Eliminar Usuario
                 </a>
             </li>
         </ul>
@@ -602,20 +596,20 @@
         <a href="#">
             <i class="livicon" data-name="users" data-size="18" data-c="#418BCA" data-hc="#418BCA"
                data-loop="true"></i>
-            <span class="title">Groups</span>
+            <span class="title">Grupo</span>
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
             <li {!! (Request::is('admin/groups') ? 'class="active" id="active"' : '') !!}>
                 <a href="{{ URL::to('admin/groups') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Group List
+                    Grupos
                 </a>
             </li>
             <li {!! (Request::is('admin/groups/create') ? 'class="active" id="active"' : '') !!}>
                 <a href="{{ URL::to('admin/groups/create') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Add New Group
+                    Agregar Grupo
                 </a>
             </li>
         </ul>
@@ -637,7 +631,7 @@
             <li {!! (Request::is('admin/vectormaps') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/vectormaps') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Vector Maps
+                    Rastreo
                 </a>
             </li>
             <li {!! (Request::is('admin/advancedmaps') ? 'class="active"' : '') !!}>
@@ -659,19 +653,19 @@
             <li {!! (Request::is('admin/blogcategory') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/blogcategory') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Blog Category List
+                    Lista de categoria blog
                 </a>
             </li>
             <li {!! (Request::is('admin/blog') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/blog') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Blog List
+                    Lista de blogs
                 </a>
             </li>
             <li {!! (Request::is('admin/blog/create') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/blog/create') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    Add New Blog
+                    Agregar blog
                 </a>
             </li>
         </ul>
@@ -680,25 +674,25 @@
         <a href="#">
             <i class="livicon" data-name="move" data-c="#ef6f6c" data-hc="#ef6f6c" data-size="18"
                data-loop="true"></i>
-            <span class="title">News</span>
+            <span class="title">Noticias</span>
             <span class="fa arrow"></span>
         </a>
         <ul class="sub-menu">
             <li {!! (Request::is('admin/news') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/news') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    News
+                    NOticias
                 </a>
             </li>
             <li {!! (Request::is('admin/news_item') ? 'class="active"' : '') !!}>
                 <a href="{{ URL::to('admin/news_item') }}">
                     <i class="fa fa-angle-double-right"></i>
-                    News Details
+                    Detalles de noticias
                 </a>
             </li>
         </ul>
     </li>
-    <li {!! (Request::is('admin/minisidebar') ? 'class="active"' : '') !!}>
+    <!-- <li {!! (Request::is('admin/minisidebar') ? 'class="active"' : '') !!}>
         <a href="{{  URL::to('admin/minisidebar') }}">
             <i class="livicon" data-name="list-ul" data-size="18" data-c="#F89A14" data-hc="#F89A14"
                data-loop="true"></i>
@@ -718,8 +712,8 @@
                data-loop="true"></i>
             Horizontal Layout
         </a>
-    </li>
-    <li {!! (Request::is('admin/invoice') || Request::is('admin/blank')  ? 'class="active"' : '') !!}>
+    </li> -->
+    <!-- <li {!! (Request::is('admin/invoice') || Request::is('admin/blank')  ? 'class="active"' : '') !!}>
         <a href="#">
             <i class="livicon" data-name="flag" data-c="#418bca" data-hc="#418bca" data-size="18"
                data-loop="true"></i>
@@ -782,7 +776,7 @@
                 </a>
             </li>
         </ul>
-    </li>
+    </li> -->
     <!-- Menus generated by CRUD generator -->
     @include('admin/layouts/menu')
 </ul>

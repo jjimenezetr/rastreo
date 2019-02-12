@@ -41,7 +41,17 @@ class AuthController extends JoshController
         // Show the page
         return view('admin.login');
     }
+    public function prueba()
+    {
+        //dd("dddd");
+        // Is the user logged in?
+        //if (Sentinel::check()) {
+            return Redirect::route('admin.dashboard');
+        //}
 
+        // Show the page
+        return view('admin.login');
+    }
     /**
      * Account sign in form processing.
      * @param Request $request

@@ -24,7 +24,8 @@
     <hr class="content-header-sep">
     <div class="container">
         <div class="welcome">
-            <h3>My Account</h3>
+            <h3>Mi cuenta</h3>
+            <h6 class="pull-right" style="margin-top:-15px"><a href="{{ route('prueba') }}">Ingresar al administrador<a></h6>
         </div>
         <hr>
             <div class="row">
@@ -37,7 +38,7 @@
                         </div>
 
                         <div>
-                            <h3 class="text-primary" id="title">Personal Information</h3>
+                            <h3 class="text-primary" id="title">Información personal</h3>
                         </div>
                         {!! Form::model($user, ['url' => URL::to('my-account'), 'method' => 'put', 'class' => 'form-horizontal','enctype'=>"multipart/form-data"]) !!}
 
@@ -45,7 +46,7 @@
                             <div class="form-group {{ $errors->first('pic', 'has-error') }}">
                                 <div class="row">
                                     <div class="col-lg-2">
-                                        <label class="control-label">Avatar:</label>
+                                        <label class="control-label">Imagen:</label>
                                     </div>
                                 <div class="col-lg-10">
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -67,11 +68,11 @@
                                         <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                                         <div>
                                             <span class="btn btn-primary btn-file">
-                                                <span class="fileinput-new">Select image</span>
-                                                <span class="fileinput-exists">Change</span>
+                                                <span class="fileinput-new">Seleccionar una imagen</span>
+                                                <span class="fileinput-exists">Cambiar</span>
                                                 <input type="file" name="pic" id="pic" />
                                             </span>
-                                            <span class="btn btn-primary fileinput-exists" data-dismiss="fileinput">Remove</span>
+                                            <span class="btn btn-primary fileinput-exists" data-dismiss="fileinput">Eliminar</span>
                                         </div>
                                     </div>
                                     <span class="help-block">{{ $errors->first('pic', ':message') }}</span>
@@ -82,7 +83,7 @@
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
                                 <label class="control-label">
-                                    First Name:
+                                    Primer nombre:
                                     <span class='require'>*</span>
                                 </label>
                                 </div>
@@ -104,7 +105,7 @@
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
                                         <label class="control-label">
-                                            Last Name:
+                                            Apellido (s):
                                             <span class='require'>*</span>
                                         </label>
                                     </div>
@@ -127,7 +128,7 @@
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
                                         <label class="control-label">
-                                            Email:
+                                            Correo:
                                             <span class='require'>*</span>
                                         </label>
                                     </div>
@@ -149,7 +150,7 @@
                                     <div class="row">
                                         <div class="col-lg-2 col-12">
                                         <label class="control-label">
-                                            Password:
+                                            Contraseña:
                                             <span class='require'>*</span>
                                         </label>
                                     </div>
@@ -168,7 +169,7 @@
                             <div class="form-group {{ $errors->first('password_confirm', 'has-error') }}">
                                 <div class="row">
                                 <label class="col-lg-2  col-12 control-label">
-                                    Confirm Password:
+                                    Confirmar contraseña:
                                     <span class='require'>*</span>
                                 </label>
                                     <div class="col-lg-10 col-12">
@@ -185,25 +186,25 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
-                                    <label class="control-label">Gender: </label>
+                                    <label class="control-label">Género: </label>
                                 </div>
                                     <div class="col-lg-10 col-12">
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="gender" value="male" @if($user->gender === "male") checked="checked" @endif />
-                                            Male
+                                            Masculino
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="gender" value="female" @if($user->gender === "female") checked="checked" @endif />
-                                            Female
+                                            Femenino
                                         </label>
                                     </div>
                                     <div class="radio">
                                         <label>
                                             <input type="radio" name="gender" value="other" @if($user->gender === "other") checked="checked" @endif />
-                                            Other
+                                            otro
                                         </label>
                                     </div>
                                 </div>
@@ -212,7 +213,7 @@
                             <div class="form-group  {{ $errors->first('bio', 'has-error') }}">
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
-                                        <label for="" class="control-label">Bio <small>(brief intro):</small></label>
+                                        <label for="" class="control-label">Descripción <small>(introducción):</small></label>
                                     </div>
 
                                     <div class="col-lg-10 col-12">
@@ -225,7 +226,7 @@
 
 
                             <div>
-                                <h3 class="text-primary" id="title">Contact: </h3>
+                                <h3 class="text-primary" id="title">Contacto: </h3>
                             </div>
 
                             <div class="form-group {{ $errors->first('address', 'has-error') }}">
@@ -233,7 +234,7 @@
 
                                     <div class="col-lg-2 col-12">
                                 <label class="control-label">
-                                    Address:
+                                    Dirección:
                                 </label>
                                </div>
                                     <div class="col-lg-10 col-12">
@@ -247,7 +248,7 @@
                             <div class="form-group {{ $errors->first('country', 'has-error') }}">
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
-                                        <label class="control-label">Select Country: </label>
+                                        <label class="control-label">Seleccionar Pais: </label>
                                     </div>
 
                                     <div class="col-lg-10 col-12">
@@ -260,7 +261,7 @@
                             <div class="form-group {{ $errors->first('user_state', 'has-error') }}">
                                 <div class="row">
                                     <div class="col-lg-2 col-12" >
-                                        <label class="control-label" for="state">State:</label>
+                                        <label class="control-label" for="state">Estado:</label>
                                     </div>
                                     <div class="col-lg-10 col-12 col-md-12 col-sm-12 ">
                                     <div class="input-group input-group-append">
@@ -278,7 +279,7 @@
                             <div class="form-group {{ $errors->first('city', 'has-error') }}">
                                 <div class="row">
                                     <div class="col-lg-2 col-12">
-                                        <label class=control-label" for="city">City:</label>
+                                        <label class=control-label" for="city">Ciudad:</label>
                                     </div>
                                     <div class="col-lg-10 col-12">
                                     <div class="input-group input-group-append">
@@ -338,7 +339,7 @@
 
                             <div class="form-group">
                                 <div class="col-lg-10 col-12 ml-auto">
-                                    <button class="btn btn-primary" type="submit">Save</button>
+                                    <button class="btn btn-primary" type="submit">Guardar</button>
                                 </div>
                             </div>
 

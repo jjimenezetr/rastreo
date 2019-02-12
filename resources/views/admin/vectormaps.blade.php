@@ -10,106 +10,48 @@ Vector Maps
 @section('header_styles')    
     
 	<link href="{{ asset('css/pages/jqvmap.css') }}" media="screen" rel="stylesheet" type="text/css" />
-    
+    <link rel="stylesheet" href="https://openlayers.org/en/v4.6.5/css/ol.css" type="text/css">
 @stop
 
 {{-- Page content --}}
 @section('content')
 
-<!--<section class="content-header">-->
-                <!--<h1>Vector Maps</h1>-->
-                <!--<ol class="breadcrumb">-->
-                    <!--<li>-->
-                        <!--<a href="{{ route('admin.dashboard') }}">-->
-                            <!--<i class="livicon" data-name="home" data-size="14" data-color="#000"></i>-->
-                            <!--Dashboard-->
-                        <!--</a>-->
-                    <!--</li>-->
-                    <!--<li><a href="#"> Maps</a></li>-->
-                    <!--<li class="active">Vector Maps</li>-->
-                <!--</ol>-->
-            <!--</section>-->
-            <!-- Main content -->
             <section class="content">
-                <div class="row">
-                    <div class="col-lg-6 col-12 col-md-6 my-3">
-                        <!-- Basic charts strats here-->
-                        <div class="card panel-success">
-                            <div class="card-heading">
-                                <h4 class="card-title">World</h4>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up showhide clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div id="vmapworld" class="map_size" style="width:100%; height:350px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 my-3">
-                        <!-- Basic charts strats here-->
-                        <div class="card panel-info">
-                            <div class="card-heading">
-                                <h4 class="card-title">USA</h4>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up showhide clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div id="vmapusa" class="map_size" style="width:100%; height:350px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- row -->
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-12 my-3">
-                        <!-- Basic charts strats here-->
-                        <div class="card panel-warning">
-                            <div class="card-heading">
-                                <h4 class="card-title">Europe</h4>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up showhide clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div id="vmapeurope" class="map_size" style="width:100%; height:350px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-12 my-3">
-                        <!-- Basic charts strats here-->
-                        <div class="card panel-danger">
-                            <div class="card-heading">
-                                <h4 class="card-title">Germany</h4>
-                                <span class="float-right">
-                                    <i class="fa fa-chevron-up showhide clickable"></i>
-                                    <i class="fa fa-remove removepanel clickable"></i>
-                                </span>
-                            </div>
-                            <div class="card-body">
-                                <div id="vmapgermany" class="map_size" style="width:100%; height:350px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- row -->
+
+                	
                 <div class="row">
                     <div class="col-lg-12 col-12 col-md-12 my-3">
                         <!-- Basic charts strats here-->
                         <div class="card panel-primary">
                             <div class="card-heading">
-                                <h4 class="card-title">Russia</h4>
+                                <h4 class="card-title">Bolivia</h4>
                                 <span class="float-right">
                                     <i class="fa fa-chevron-up showhide clickable"></i>
                                     <i class="fa fa-remove removepanel clickable"></i>
                                 </span>
                             </div>
-                            <div class="card-body">
-                                <div id="vmaprussia" class="map_size" style="width:100%; height:350px;"></div>
+                            
+			            
+			                            
+                            <div class="card-body" style="width: 100%; height: 700px;">
+								<body onload="initialize_map(); add_map_point(-17.381774, -66.152911);">
+	                              
+	                              
+	                              <div class="form-inline">
+                                    <select class="form-control" style="width: 180px; height: 35px;">
+                                    	<option>Seleccionar vehículo</option>
+									    <option>Juan</option>
+									    <option>Pepe</option>
+									    <option>Carlos</option>
+									</select>
+									<button type="button" class="btn btn-primary">Rastrear</button>
+				                  </div>	
+				                  
+				                  
+								  <div id="map" style="width: 100%; height: 100%;"></div>
+								</body>
+							    
                             </div>
                         </div>
                     </div>
@@ -121,7 +63,7 @@ Vector Maps
 
 {{-- page level scripts --}}
 @section('footer_scripts')
-    
+   <!-- 
     <script src="{{ asset('vendors/jqvmap/js/jquery.vmap.js') }}"  type="text/javascript"></script>
     <script src="{{ asset('vendors/jqvmap/js/jquery.vmap.world.js') }}"  type="text/javascript"></script>
     <script src="{{ asset('vendors/jqvmap/js/jquery.vmap.usa.js') }}"  type="text/javascript"></script>
@@ -129,78 +71,55 @@ Vector Maps
     <script src="{{ asset('vendors/jqvmap/js/jquery.vmap.germany.js') }}"  type="text/javascript"></script>
     <script src="{{ asset('vendors/jqvmap/js/jquery.vmap.russia.js') }}"  type="text/javascript"></script>
     <script src="{{ asset('vendors/jqvmap/js/jquery.vmap.sampledata.js') }}" ></script>
-    <script type="text/javascript">
-    jQuery(document).ready(function() {
-        jQuery('#vmapworld').vectorMap({
-            map: 'world_en',
-            backgroundColor: '#ffffff',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#045707', '#84F088'],
-            normalizeFunction: 'polynomial'
-        });
-        jQuery('#vmaprussia').vectorMap({
-            map: 'russia_en',
-            backgroundColor: '#ffffff',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#094980', '#ACD2F2'],
-            normalizeFunction: 'polynomial'
-        });
-        jQuery('#vmapgermany').vectorMap({
-            map: 'germany_en',
-            backgroundColor: '#ffffff',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#d84a38', '#F5B4AB'],
-            normalizeFunction: 'polynomial'
-        });
-        jQuery('#vmapeurope').vectorMap({
-            map: 'europe_en',
-            backgroundColor: '#ffffff',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#ffb848', '#F5D5A4'],
-            normalizeFunction: 'polynomial'
-        });
-        jQuery('#vmapusa').vectorMap({
-            map: 'usa_en',
-            backgroundColor: '#ffffff',
-            color: '#ffffff',
-            hoverOpacity: 0.7,
-            selectedColor: '#666666',
-            enableZoom: true,
-            showTooltip: true,
-            values: sample_data,
-            scaleColors: ['#5bc0de', '#D6DBDE'],
-            normalizeFunction: 'polynomial'
-        });
-    });
-    $('.map_size').closest('.panel-body').on('resize', function () {
-        $(window).trigger('resize');
-    });
-    $('#slim1').slimscroll({
-        height: '500px',
-        size: '3px',
-        color: '#D84A38',
-        opacity: 1
-    });
-    </script>
-    
+    <script type="text/javascript"> -->
+    <script src="https://openlayers.org/en/v4.6.5/build/ol.js" type="text/javascript"></script>     
 @stop
+
+  <script>
+    /* OSM & OL example code provided by https://mediarealm.com.au/ */
+    var map;
+    var mapLat = -17.381774;
+    var mapLng = -66.152911;
+    var mapDefaultZoom = 17;
+    
+    function initialize_map() {
+      map = new ol.Map({
+        target: "map",
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM({
+                      url: "https://a.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                })
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([mapLng, mapLat]),
+            zoom: mapDefaultZoom
+        })
+      });
+    }
+    function add_map_point(lat, lng) {
+      var vectorLayer = new ol.layer.Vector({
+        source:new ol.source.Vector({
+          features: [new ol.Feature({
+                geometry: new ol.geom.Point(ol.proj.transform([parseFloat(lng), parseFloat(lat)], 'EPSG:4326', 'EPSG:3857')),
+            })]
+        }),
+        style: new ol.style.Style({
+          image: new ol.style.Icon({
+            anchor: [0.5, 0.5],
+            anchorXUnits: "fraction",
+            anchorYUnits: "fraction",
+            src: "https://upload.wikimedia.org/wikipedia/commons/e/ec/RedDot.svg"
+          })
+        })
+      });
+      map.addLayer(vectorLayer); 
+    }
+  </script>
+
+
+
+
+
+

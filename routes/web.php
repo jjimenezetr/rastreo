@@ -14,7 +14,7 @@ include_once 'web_builder.php';
 Route::pattern('slug', '[a-z0-9- _]+');
 
 Route::group(['prefix' => 'admin', 'namespace'=>'Admin'], function () {
-
+    Route::get('prueba', 'AuthController@prueba')->name('prueba');
     # Error pages should be shown without requiring login
     Route::get('404', function () {
         return view('admin/404');

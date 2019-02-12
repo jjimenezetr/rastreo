@@ -27,7 +27,7 @@
           color: #01bc8c;
       }
     </style>
-    <!--end of global css-
+    <!--end of global css-->
     <!--page level css-->
     @yield('header_styles')
     <!--end of page level css-->
@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-lg-4 col-8 col-md-4 mt10">
                     <ul class="list-inline">
-                        <li>
+                        <!-- <li>
                             <a href="#"> <i class="livicon" data-name="facebook" data-size="18" data-loop="true" data-c="#fff"
                                             data-hc="#757b87"></i>
                             </a>
@@ -51,30 +51,30 @@
                             <a href="#"> <i class="livicon" data-name="twitter" data-size="18" data-loop="true" data-c="#fff"
                                             data-hc="#757b87"></i>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <a href="#"> <i class="livicon" data-name="google-plus" data-size="18" data-loop="true"
                                             data-c="#fff" data-hc="#757b87"></i>
                             </a>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <a href="#"> <i class="livicon" data-name="linkedin" data-size="18" data-loop="true" data-c="#fff"
                                             data-hc="#757b87"></i>
                             </a>
-                        </li>
+                        </li> -->
                         <!-- <li>
                             <a href="#"> <i class="livicon" data-name="rss" data-size="18" data-loop="true" data-c="#fff"
                                             data-hc="#757b87"></i>
                             </a>
                         </li> -->
-                        <li>
+                        <!-- <li>
                             <a href="mailto:"><i class="livicon" data-name="mail" data-size="18" data-loop="true"
                                                  data-c="#fff"
                                                  data-hc="#fff"></i></a>
                             <label class="d-none d-md-inline-block d-lg-inline-block d-xl-inline-block"><a
                                     href="mailto:"
                                     class="text-white">info@jsoftin.com</a></label>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="tel:"><i class="livicon" data-name="phone" data-size="18" data-loop="true"
                                               data-c="#fff"

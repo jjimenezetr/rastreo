@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login | Welcome to Josh Frontend</title>
+    <title>Iniciar Sesión | Bienvenido a JSOFTIN</title>
     <!--global css starts-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
@@ -25,8 +25,8 @@
         <div class="box animation flipInX font_size ">
             <div class="box1">
                 <div class="text-center">
-            <img src="{{ asset('images/josh-new.png') }}" alt="logo" class="img-fluid mar"></div>
-            <h3 class="text-primary">Iniciar Sesión</h3>
+            <img src="{{ asset('images/logo1.png') }}" alt="logo" class="img-fluid mar"></div>
+            <!-- <h5 class="text-primary">Iniciar Sesión</h5> -->
                 <!-- Notifications -->
                 <div id="notific">
                 @include('notifications')
@@ -41,17 +41,17 @@
                     </div>
                     <div class="form-group {{ $errors->first('password', 'has-error') }}">
                         <label class="sr-only">Password</label>
-                        <input type="password" class="form-control" name="password" placeholder="COntrasena">
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña">
                     </div>
                     <span class="help-block">{{ $errors->first('password', ':message') }}</span>
-                    <div class="checkbox">
+                    <!-- <div class="checkbox">
                         <label>
                             <input type="checkbox"> 
                         </label>
 
-                    </div>
-                    <input type="submit" class="btn btn-block btn-primary" value="Log In">
-                    TIene una cuenta? <a href="{{ route('register') }}"><strong> Registrarse</strong></a>
+                    </div> -->
+                    <input type="submit" class="btn btn-block btn-primary" value="Iniciar Sesión">
+                    <!-- ¿Tiene una cuenta? <a href="{{ route('register') }}"><strong> Registrarse</strong></a> -->
                 </form>
                 <br/>
                 <!-- <div class="row">
@@ -69,7 +69,7 @@
                 </div> -->
             </div>
         <div class="bg-light animation flipInX">
-            <a href="{{ route('forgot-password') }}" id="forgot_pwd_title">Olvido su con=ntrsenaword?</a>
+            <!-- <a href="{{ route('forgot-password') }}" id="forgot_pwd_title">¿Olvido su contraseña?</a> -->
         </div>
         </div>
     </div>
